@@ -1,0 +1,37 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #111;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+.header {
+  font-size: 2em;
+  margin: 20px;
+  animation: blinkText 1s infinite alternate;
+}
+@keyframes blinkText {
+  0% { opacity: 1; }
+  100% { opacity: 0.5; }
+}
+.morse-container {
+  font-size: 1.5em;
+  margin: 20px;
+  padding: 10px;
+}
+.morse-output {
+  font-size: 2em;
+  color: #00ff00;
+}
+.webcam-container {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 10px;
+}
+video {
+  width: 300px;
+  border: 3px solid #00ff00;
+}
