@@ -24,7 +24,7 @@ MORSE_CODE_DICT = {
     "-.-": "K", ".-..": "L", "--": "M", "-.": "N", "---": "O",
     ".--.": "P", "--.-": "Q", ".-.": "R", "...": "S", "-": "T",
     "..-": "U", "...-": "V", ".--": "W", "-..-": "X", "-.--": "Y",
-    "--..": "Z"
+    "--..": "Z", ".-.-": " "
 }
 
 # Function to calculate Eye Aspect Ratio (EAR)
@@ -130,6 +130,11 @@ def index():
 @socketio.on("connect")
 def handle_connect():
     print("Client connected")
+    socketio.emit("timing_parameters", {
+        "letter_pause": LETTER_PAUSE,
+        "word_pause": WORD_PAUSE,
+        "blink_cooldown": BLINK_COOLDOWN
+    })
 
 if __name__ == '__main__':
     socketio.start_background_task(target=detect_blinks)
